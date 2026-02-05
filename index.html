@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ BuscaEPI - Central Completa de Perguntas Frequentes</title>
+    <style>
+        
+        :root {
+            --primary-blue: #0066FF;
+            --primary-red: #c0392b;
+            --primary-grey: #4a4a4a;
+            --light-bg: #f4f6f9;
+            --white: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --success: #10B981;
+            --warning: #F59E0B;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-red);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-width: 400px;
+            height: auto;
+        }
+
+        .page-title {
+            margin-top: 10px;
+            color: var(--primary-grey);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .search-box {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .faq-section {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--primary-red);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-grey);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            padding: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        summary {
+            font-weight: 600;
+            color: var(--primary-grey);
+            list-style: none;
+            position: relative;
+            padding-right: 30px;
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        details[open] summary {
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            color: #555;
+            padding-left: 15px;
+            border-left: 3px solid var(--primary-red);
+            margin-top: 10px;
+            text-align: justify;
+        }
+
+        .answer ul, .answer ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .answer li {
+            margin: 5px 0;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border-left: 3px solid var(--primary-red);
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .faq-section {
+                padding: 20px;
+            }
+            summary {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="data:image/webp;base64,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" alt="BuscaEPI - Gestão Inteligente de Segurança do Trabalho">
+    </div>
+    <div class="page-title">FAQ Completo - Perguntas Frequentes</div>
+</header>
+
+<div class="container">
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Digite para buscar sua dúvida..." onkeyup="searchFAQ()">
+        <div id="resultCounter" style="margin-top: 10px; font-size: 0.9em; font-weight: 600; display: none;"></div>
+    </div>
+
+    <!-- SEÇÃO 1: VALIDADE JURÍDICA E SEGURANÇA -->
+        <!-- PERGUNTAS MAIS ACESSADAS -->
+    <div class="faq-section" style="margin-bottom: 50px;">
+        <div class="section-header">
+            <span class="section-icon">📊</span>
+            <h2 class="section-title">Estatísticas do FAQ</h2>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 30px; border-radius: 12px; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <p style="text-align: center; color: #666; margin-bottom: 20px; font-size: 0.95rem;">
+                📈 Visualize a distribuição de perguntas por categoria
+            </p>
+            
+            <div style="max-width: 700px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <canvas id="faqChart" style="max-height: 400px;"></canvas>
+            </div>
+            
+            <div id="statsNumbers" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px;">
+                <!-- Cards serão inseridos aqui -->
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6;">
+                <button onclick="criarGraficoCategorias()" style="background: var(--primary-red); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s;" onmouseover="this.style.background='#a02d22'" onmouseout="this.style.background='var(--primary-red)'">
+                    🔄 Atualizar Estatísticas
+                </button>
+            </div>
+        </div>
+    </div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+console.log('🚀 FAQ BuscaEPI - Iniciando...');
+
+// ============================================
+// VARIÁVEIS GLOBAIS
+// ============================================
+let questionClicks = {};
+let categoriesChart = null;
+let topChart = null;
+
+// ============================================
+// INICIALIZAÇÃO
+// ============================================
+window.addEventListener('load', function() {
+    console.log('✅ Página carregada');
+    
+    if (typeof Chart === 'undefined') {
+        console.error('❌ Chart.js não carregou!');
+        alert('ERRO: Chart.js não carregou. Verifique sua conexão com a internet.');
+        return;
+    }
+    
+    console.log('✅ Chart.js disponível');
+    
+    // Aguardar um pouco e inicializar
+    setTimeout(function() {
+        inicializarTudo();
+    }, 500);
+});
+
+function inicializarTudo() {
+    console.log('📊 Inicializando sistema...');
+    
+    // Gráfico de categorias
+    criarGraficoCategorias();
+    
+    // Sistema de tracking
+    inicializarTracking();
+    
+    console.log('✅ Sistema inicializado!');
+}
+
+// ============================================
+// GRÁFICO DE CATEGORIAS
+// ============================================
+function criarGraficoCategorias() {
+    console.log('📊 Criando gráfico de categorias...');
+    
+    const canvas = document.getElementById('faqChart');
+    if (!canvas) {
+        console.error('❌ Canvas não encontrado!');
+        return;
+    }
+    
+    // Coletar dados
+    const sections = document.querySelectorAll('.faq-section');
+    const categorias = [];
+    const quantidades = [];
+    let total = 0;
+    
+    sections.forEach(section => {
+        const title = section.querySelector('.section-title');
+        if (!title) return;
+        
+        const nome = title.textContent.trim();
+        
+        // Pular seções especiais
+        if (nome === 'Estatísticas do FAQ' || nome === 'Perguntas Mais Acessadas') {
+            return;
+        }
+        
+        const perguntas = section.querySelectorAll('.faq-item');
+        const qtd = perguntas.length;
+        
+        if (qtd > 0) {
+            categorias.push(nome);
+            quantidades.push(qtd);
+            total += qtd;
+        }
+    });
+    
+    console.log('📈 Total de perguntas:', total);
+    console.log('📈 Categorias:', categorias.length);
+    
+    // Destruir gráfico anterior
+    if (categoriesChart) {
+        categoriesChart.destroy();
+    }
+    
+    // Criar gráfico
+    const ctx = canvas.getContext('2d');
+    
+    categoriesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: categorias,
+            datasets: [{
+                label: 'Perguntas',
+                data: quantidades,
+                backgroundColor: [
+                    'rgba(192, 57, 43, 0.8)',
+                    'rgba(0, 102, 255, 0.8)',
+                    'rgba(39, 174, 96, 0.8)',
+                    'rgba(243, 156, 18, 0.8)',
+                    'rgba(142, 68, 173, 0.8)',
+                    'rgba(22, 160, 133, 0.8)'
+                ],
+                borderColor: [
+                    'rgb(192, 57, 43)',
+                    'rgb(0, 102, 255)',
+                    'rgb(39, 174, 96)',
+                    'rgb(243, 156, 18)',
+                    'rgb(142, 68, 173)',
+                    'rgb(22, 160, 133)'
+                ],
+                borderWidth: 2,
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '📊 Perguntas por Categoria',
+                    font: { size: 18, weight: 'bold' },
+                    padding: 20
+                },
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1,
+                        callback: function(value) {
+                            return Number.isInteger(value) ? value : '';
+                        }
+                    }
+                }
+            }
+        }
+    });
+    
+    console.log('✅ Gráfico de categorias criado!');
+    
+    // Criar cards
+    criarCards(total, categorias.length);
+}
+
+function criarCards(total, numCategorias) {
+    const container = document.getElementById('statsNumbers');
+    if (!container) return;
+    
+    const media = (total / numCategorias).toFixed(1);
+    
+    container.innerHTML = `
+        <div style="background: linear-gradient(135deg, #fef5f5 0%, #fee 100%); padding: 20px; border-radius: 10px; text-align: center; border-left: 4px solid #c0392b; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size: 32px; margin-bottom: 8px;">📋</div>
+            <div style="font-size: 36px; font-weight: bold; color: #c0392b; margin-bottom: 5px;">${total}</div>
+            <div style="font-size: 13px; color: #666; font-weight: 500;">Total de Perguntas</div>
+        </div>
+        <div style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%); padding: 20px; border-radius: 10px; text-align: center; border-left: 4px solid #0066FF; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size: 32px; margin-bottom: 8px;">📂</div>
+            <div style="font-size: 36px; font-weight: bold; color: #0066FF; margin-bottom: 5px;">${numCategorias}</div>
+            <div style="font-size: 13px; color: #666; font-weight: 500;">Categorias</div>
+        </div>
+        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 20px; border-radius: 10px; text-align: center; border-left: 4px solid #27ae60; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size: 32px; margin-bottom: 8px;">📊</div>
+            <div style="font-size: 36px; font-weight: bold; color: #27ae60; margin-bottom: 5px;">${media}</div>
+            <div style="font-size: 13px; color: #666; font-weight: 500;">Média por Categoria</div>
+        </div>
+    `;
+    
+    console.log('✅ Cards criados!');
+}
+
+// ============================================
+// TRACKING DE PERGUNTAS
+// ============================================
+function inicializarTracking() {
+    console.log('🔥 Inicializando tracking...');
+    
+    // Carregar dados
+    try {
+        const saved = localStorage.getItem('faq_clicks');
+        if (saved) {
+            questionClicks = JSON.parse(saved);
+            console.log('✅ Dados carregados:', Object.keys(questionClicks).length, 'perguntas');
+        }
+    } catch (e) {
+        console.log('ℹ️  Sem dados salvos');
+    }
+    
+    // Adicionar listeners
+    const allDetails = document.querySelectorAll('.faq-item details');
+    console.log('📌 Adicionando tracking a', allDetails.length, 'perguntas');
+    
+    allDetails.forEach((detail, index) => {
+        const summary = detail.querySelector('summary');
+        if (!summary) return;
+        
+        const texto = summary.textContent.trim();
+        const id = 'q' + index;
+        
+        detail.addEventListener('toggle', function() {
+            if (this.open) {
+                registrarClick(id, texto);
+            }
+        });
+    });
+    
+    // Atualizar se houver dados
+    if (Object.keys(questionClicks).length > 0) {
+        atualizarTopQuestions();
+    }
+    
+    console.log('✅ Tracking inicializado!');
+}
+
+function registrarClick(id, texto) {
+    if (!questionClicks[id]) {
+        questionClicks[id] = { texto: texto, clicks: 0 };
+    }
+    
+    questionClicks[id].clicks++;
+    console.log('👆 Click:', texto);
+    
+    // Salvar
+    try {
+        localStorage.setItem('faq_clicks', JSON.stringify(questionClicks));
+    } catch (e) {
+        console.error('Erro ao salvar:', e);
+    }
+    
+    // Atualizar
+    atualizarTopQuestions();
+}
+
+function atualizarTopQuestions() {
+    const top = Object.values(questionClicks)
+        .sort((a, b) => b.clicks - a.clicks)
+        .slice(0, 10);
+    
+    if (top.length === 0) return;
+    
+    console.log('🔥 Atualizando top', top.length, 'perguntas');
+    
+    // Atualizar lista
+    const container = document.getElementById('topQuestionsListContent');
+    if (container) {
+        let html = '<div style="display: flex; flex-direction: column; gap: 10px;">';
+        
+        const medals = ['🥇', '🥈', '🥉'];
+        const colors = ['#c0392b', '#e67e22', '#f39c12', '#95a5a6'];
+        const bgs = ['#fff5f5', '#fff9f5', '#fffbf5', '#f8f9fa'];
+        
+        top.forEach((q, i) => {
+            const medal = i < 3 ? medals[i] : '📌';
+            const color = colors[Math.min(i, 3)];
+            const bg = bgs[Math.min(i, 3)];
+            
+            html += `
+                <div style="padding: 12px 15px; background: ${bg}; border-radius: 8px; border-left: 4px solid ${color}; display: flex; justify-content: space-between; align-items: center; gap: 10px; transition: transform 0.2s;" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">
+                    <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
+                        <span style="font-size: 1.3rem; flex-shrink: 0;">${medal}</span>
+                        <span style="color: #2c3e50; font-weight: ${i < 3 ? '600' : 'normal'}; overflow: hidden; text-overflow: ellipsis;">${q.texto}</span>
+                    </div>
+                    <span style="background: ${color}; color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; white-space: nowrap; flex-shrink: 0;">
+                        ${q.clicks}
+                    </span>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+        container.innerHTML = html;
+    }
+    
+    // Criar gráfico
+    const canvas = document.getElementById('topQuestionsChart');
+    if (!canvas) return;
+    
+    if (topChart) {
+        topChart.destroy();
+    }
+    
+    const ctx = canvas.getContext('2d');
+    
+    topChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: top.map((q, i) => (i + 1) + 'º'),
+            datasets: [{
+                label: 'Acessos',
+                data: top.map(q => q.clicks),
+                backgroundColor: 'rgba(192, 57, 43, 0.8)',
+                borderColor: 'rgb(192, 57, 43)',
+                borderWidth: 2,
+                borderRadius: 6
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '🔥 Top 10 Perguntas Mais Acessadas',
+                    font: { size: 16, weight: 'bold' },
+                    padding: 20
+                },
+                legend: { display: false }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 1 }
+                }
+            }
+        }
+    });
+    
+    console.log('✅ Top questions atualizado!');
+}
+
+function resetQuestionClicks() {
+    if (!confirm('⚠️ Limpar todas as estatísticas?\n\nEsta ação não pode ser desfeita.')) {
+        return;
+    }
+    
+    questionClicks = {};
+    localStorage.removeItem('faq_clicks');
+    
+    if (topChart) {
+        topChart.destroy();
+        topChart = null;
+    }
+    
+    const container = document.getElementById('topQuestionsListContent');
+    if (container) {
+        container.innerHTML = '<p style="text-align: center; color: #999; padding: 20px;">📌 Clique nas perguntas para gerar estatísticas</p>';
+    }
+    
+    alert('✅ Estatísticas limpas!');
+    console.log('🗑️  Dados resetados');
+}
+
+// ============================================
+// BUSCA
+// ============================================
+function searchFAQ() {
+    const input = document.getElementById('searchInput');
+    if (!input) return;
+    
+    const filter = input.value.toLowerCase().trim();
+    const sections = document.getElementsByClassName('faq-section');
+    
+    for (let section of sections) {
+        const items = section.getElementsByClassName('faq-item');
+        let sectionHasMatch = false;
+        
+        for (let item of items) {
+            const details = item.querySelector('details');
+            if (!details) continue;
+            
+            const summary = details.querySelector('summary');
+            const answer = details.querySelector('.answer');
+            
+            if (!summary) continue;
+            
+            let text = summary.textContent || '';
+            if (answer) {
+                text += ' ' + answer.textContent;
+            }
+            
+            if (filter === '' || text.toLowerCase().indexOf(filter) > -1) {
+                item.style.display = '';
+                sectionHasMatch = true;
+            } else {
+                item.style.display = 'none';
+            }
+        }
+        
+        if (sectionHasMatch || filter === '') {
+            section.style.display = '';
+        } else {
+            section.style.display = 'none';
+        }
+    }
+}
+
+console.log('✅ Script pronto!');
+</script>
+
+
+<div class="faq-section">
+        <div class="section-header">
+            <span class="section-icon">⚖️</span>
+            <h2 class="section-title">Validade Jurídica e Segurança</h2>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>É obrigatório usar certificado digital (ICP-Brasil/e-CPF) para o colaborador assinar a ficha de EPI?</summary>
+                <div class="answer">
+                    <p><strong>Não, não é obrigatório.</strong> A legislação brasileira permite o uso de diferentes tipos de assinatura eletrônica:</p>
+                    <ul>
+                        <li><strong>Lei nº 14.063/2020:</strong> Classifica três tipos de assinatura eletrônica (simples, avançada e qualificada)</li>
+                        <li><strong>MP nº 2.200-2/2001:</strong> Reconhece outras formas de assinatura desde que aceitas pelas partes</li>
+                        <li><strong>NR-6 (Portaria 2.175/2022):</strong> Permite expressamente sistema eletrônico, inclusive por sistema biométrico</li>
+                    </ul>
+                    <p>O BuscaEPI utiliza <span class="highlight">assinatura eletrônica avançada</span>, com validação por biometria (digital ou facial) e senha pessoal, garantindo plena validade jurídica sem o custo de certificados digitais para cada funcionário.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>A ficha eletrônica é aceita em processos trabalhistas e fiscalizações?</summary>
+                <div class="answer">
+                    <p><strong>Sim.</strong> A validade é respaldada por:</p>
+                    <ul>
+                        <li><strong>NR-6 (Item 6.5.1, alínea "d"):</strong> Autoriza expressamente o registro em "sistema eletrônico, inclusive por sistema biométrico"</li>
+                        <li><strong>Portaria SIT nº 107/2009:</strong> Primeira norma a permitir sistemas eletrônicos para registro de EPI</li>
+                        <li><strong>Nota Técnica nº 162/2017 DSST/SIT/MTb:</strong> Confirma validade da biometria desde que permita extração de relatórios</li>
+                    </ul>
+                    <p>O sistema gera um <strong>Termo de Auditoria</strong> com hash de integridade, carimbo de tempo, registro de IP e geolocalização, criando uma prova técnica robusta e auditável.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como o sistema garante que foi realmente o colaborador que assinou?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI utiliza <strong>múltiplas camadas de autenticação</strong>:</p>
+                    <ol>
+                        <li><strong>Reconhecimento Facial (FaceID):</strong> Compara a foto da entrega com a foto de cadastro (acurácia >95%)</li>
+                        <li><strong>Biometria Digital:</strong> Vincula a impressão digital única ao registro</li>
+                        <li><strong>Senha Pessoal:</strong> Credencial intransferível de 4 a 6 dígitos</li>
+                        <li><strong>Assinatura Eletrônica:</strong> Assinatura manuscrita na tela do dispositivo</li>
+                    </ol>
+                    <p><strong>Rastreabilidade completa:</strong></p>
+                    <ul>
+                        <li>Registro de IP e GPS do local da entrega</li>
+                        <li>Data e hora com precisão de segundos</li>
+                        <li>Hash único para cada termo de entrega</li>
+                        <li>Log inalterável de todas as operações</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O que diz a legislação sobre assinatura eletrônica no Brasil?</summary>
+                <div class="answer">
+                    <p><strong>Principais normas:</strong></p>
+                    <ul>
+                        <li><strong>MP 2.200-2/2001:</strong> Instituiu a ICP-Brasil e reconhece assinaturas eletrônicas</li>
+                        <li><strong>Lei 14.063/2020:</strong> Regulamenta uso de assinaturas eletrônicas em entes públicos e privados</li>
+                        <li><strong>Lei 14.620/2023:</strong> Alterou o CPC para reconhecer força executiva de documentos eletrônicos</li>
+                        <li><strong>NR-6 (2022):</strong> Menciona expressamente sistema biométrico para registro de EPI</li>
+                    </ul>
+                    <p>O sistema BuscaEPI está <span class="highlight">em plena conformidade</span> com toda a legislação vigente.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Qual a diferença entre assinatura eletrônica simples, avançada e qualificada?</summary>
+                <div class="answer">
+                    <p>Conforme a <strong>Lei 14.063/2020</strong>:</p>
+                    <ul>
+                        <li><strong>Simples:</strong> Identificação básica (e-mail, senha, token)</li>
+                        <li><strong>Avançada:</strong> Identificação inequívoca com biometria, criptografia ou autenticação robusta (UTILIZADA PELO BUSCAEPI)</li>
+                        <li><strong>Qualificada:</strong> Usa certificado digital ICP-Brasil com presunção legal de autenticidade</li>
+                    </ul>
+                    <p>Para registros trabalhistas como EPI, a assinatura <span class="highlight">avançada é suficiente e juridicamente válida</span>, conforme pareceres do Ministério do Trabalho.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como comprovar que realmente foi o colaborador que fez a assinatura?</summary>
+                <div class="answer">
+                    <p><strong>Orientações importantes:</strong></p>
+                    <ol>
+                        <li>O responsável pela entrega deve certificar-se da identidade do colaborador</li>
+                        <li>O colaborador deve fazer a assinatura o mais fidedigna possível</li>
+                        <li>Em caso de reclamatória trabalhista, pode ser designado perito grafotécnico para comparar assinaturas</li>
+                        <li>O sistema mantém registro de IP, geolocalização e timestamp de cada assinatura</li>
+                    </ol>
+                    <p><strong>Recomendação:</strong> Cada colaborador deve assinar seu <strong>termo de aceite</strong> ao ingressar no sistema, declarando ciência sobre o uso da assinatura eletrônica/biométrica.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O sistema está em conformidade com a LGPD?</summary>
+                <div class="answer">
+                    <p><strong>Sim.</strong> O BuscaEPI está em processo de certificação ISO 27001 + ISO 27701/LGPD (20% concluído conforme atestado de 29/01/2026).</p>
+                    <p><strong>Medidas de proteção:</strong></p>
+                    <ul>
+                        <li>Todos os dados sensíveis são criptografados</li>
+                        <li>Senhas e biometrias em ambiente seguro e secreto</li>
+                        <li>Conformidade com a Lei 13.709/2018 (LGPD)</li>
+                        <li>Acesso controlado por perfis e permissões</li>
+                        <li>Registro de auditoria de todas as operações</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 2: FUNCIONALIDADES E OPERAÇÃO -->
+    <div class="faq-section">
+        <div class="section-header">
+            <span class="section-icon">⚙️</span>
+            <h2 class="section-title">Funcionalidades e Operação</h2>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como diminuir o tempo de entrega de EPI com o sistema?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI <strong>reduz drasticamente o tempo de entrega</strong> através de:</p>
+                    <ol>
+                        <li><strong>Matriz de EPI:</strong> Vincule EPIs por função, setor ou GHE. Ao selecionar o colaborador, os EPIs já aparecem pré-selecionados</li>
+                        <li><strong>Dados pré-cadastrados:</strong> Descrição, CA, validade, fabricante e previsão de troca já preenchidos automaticamente</li>
+                        <li><strong>Assinatura rápida:</strong> Biometria ou senha em até 90 segundos, sem preencher fichas manualmente</li>
+                        <li><strong>Busca inteligente:</strong> Localize colaboradores rapidamente por nome, matrícula ou CPF</li>
+                    </ol>
+                    <p><strong>Resultado:</strong> O que levava 5-10 minutos por ficha passa a levar menos de 1 minuto!</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O sistema avisa sobre prazos e vencimentos?</summary>
+                <div class="answer">
+                    <p><strong>Sim.</strong> O BuscaEPI monitora proativamente através do <strong>Dashboard</strong>:</p>
+                    <ul>
+                        <li><strong>Validade do CA:</strong> Alerta sobre itens com CA vencido, mas permite entrega se o EPI foi adquirido com CA válido e ainda está dentro da vida útil (conforme Nota Técnica 146/2015 do MTE)</li>
+                        <li><strong>Vida Útil:</strong> Monitora quando o EPI em posse do funcionário deve ser trocado</li>
+                        <li><strong>Estoque Mínimo:</strong> Avisa quando é hora de repor materiais para evitar paradas</li>
+                        <li><strong>Trocas Antecipadas:</strong> Identifica possível mau uso ou baixa qualidade</li>
+                    </ul>
+                    <p><strong>📧 E-mail e SMS ao colaborador:</strong></p>
+                    <ul>
+                        <li>Pode ser configurado <strong>antes</strong> da entrega (no cadastro do colaborador) <strong>ou no momento da entrega</strong> (sinalizado pelo operador)</li>
+                        <li>Enviado automaticamente no dia da troca programada ou dias antes</li>
+                        <li>Prazo configurável pela empresa (ex: avisar 7 dias antes da troca)</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Posso editar uma ficha após a assinatura?</summary>
+                <div class="answer">
+                    <p><strong>Não.</strong> Para garantir a integridade legal, documentos assinados são <span class="highlight">imutáveis</span>.</p>
+                    <p><strong>Em caso de erro:</strong></p>
+                    <ol>
+                        <li>Realize o <strong>cancelamento da entrega</strong> (ação registrada em log de auditoria)</li>
+                        <li>O item volta automaticamente para o estoque</li>
+                        <li>Lance uma nova entrega correta</li>
+                    </ol>
+                    <p>Este procedimento garante rastreabilidade completa e conformidade legal.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funcionam os tipos de assinatura disponíveis?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI oferece <strong>4 modalidades seguras e validadas</strong> de assinatura digital:</p>
+                    
+                    <p><strong>1. Biometria Digital:</strong></p>
+                    <ul>
+                        <li><strong>Dispositivos homologados:</strong> Leitores biométricos FingerTech certificados</li>
+                        <li><strong>Cadastro:</strong> Digital capturada e salva em formato JPG no Azure Blob Storage</li>
+                        <li><strong>Segurança:</strong> Hash criptográfico gerado pelo SDK do fabricante e armazenado no banco</li>
+                        <li><strong>Validação:</strong> Sistema compara o hash capturado com o hash cadastrado</li>
+                        <li><strong>Inviolabilidade:</strong> Imagens e hashes não podem ser alterados, nem por administradores</li>
+                    </ul>
+                    
+                    <p><strong>2. Reconhecimento Facial (FaceID):</strong></p>
+                    <ul>
+                        <li><strong>Tecnologia:</strong> Biblioteca face-api.js com modelo Tiny Face Detector</li>
+                        <li><strong>Precisão:</strong> Acurácia superior a 95%</li>
+                        <li><strong>Processo:</strong> 
+                            <ul>
+                                <li>Foto de referência cadastrada previamente</li>
+                                <li>Foto capturada em tempo real no momento da entrega</li>
+                                <li>Algoritmo compara e gera pontuação de acurácia</li>
+                                <li>Validação se resultado > 95%</li>
+                            </ul>
+                        </li>
+                        <li><strong>Armazenamento:</strong> Ambas as fotos salvas em JPG no Azure, sem possibilidade de exclusão</li>
+                        <li><strong>Termo de Auditoria:</strong> Documento automático com identificação, detalhes da entrega, as duas fotos e taxa de acerto</li>
+                        <li><strong>Importante:</strong> Fotos usadas em assinaturas não podem ser removidas (passam a status "inativa" se substituídas, mas permanecem no sistema para rastreabilidade)</li>
+                    </ul>
+                    
+                    <p><strong>3. Senha Pessoal (Senha Numérica):</strong></p>
+                    <ul>
+                        <li>Colaborador cadastra senha de 4-6 dígitos via link seguro (e-mail ou SMS)</li>
+                        <li>Pessoal e intransferível (como senha bancária)</li>
+                        <li><strong>Segurança:</strong> Senha armazenada como hash criptografado (nunca em texto puro)</li>
+                        <li>Sistema valida o hash no momento da assinatura</li>
+                    </ul>
+                    
+                    <p><strong>4. Assinatura Digitalizada (na tela):</strong></p>
+                    <ul>
+                        <li>Assinatura manuscrita capturada na tela do dispositivo (smartphone, tablet ou touchscreen)</li>
+                        <li>Salva em formato JPG no Azure Blob Storage</li>
+                        <li><strong>Única modalidade disponível no modo offline</strong> do app BuscaEPI</li>
+                        <li><strong>Acesso ao link:</strong> Via QR Code, WhatsApp, SMS ou e-mail (disparados pelo sistema)</li>
+                        <li>Pode ser feita presencialmente ou remotamente</li>
+                    </ul>
+                    
+                    <p><strong>🔒 Garantias de Segurança:</strong></p>
+                    <ul>
+                        <li>Todas as assinaturas geram <strong>hash único</strong> por termo de entrega</li>
+                        <li>Armazenamento em <strong>Microsoft Azure</strong> com certificações ISO 27001, SOC 2, GDPR e LGPD</li>
+                        <li>Assinaturas não são reutilizáveis (cada termo exige nova coleta)</li>
+                        <li>Logs completos de auditoria para rastreabilidade</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O reconhecimento facial gera algum comprovante?</summary>
+                <div class="answer">
+                    <p><strong>Sim! O sistema gera automaticamente um Termo de Auditoria do Reconhecimento Facial.</strong></p>
+                    
+                    <p><strong>O documento contém:</strong></p>
+                    <ul>
+                        <li><strong>Identificação do colaborador:</strong> Nome completo, matrícula e função</li>
+                        <li><strong>Detalhes da entrega:</strong> Identificador único, data e lista de itens entregues</li>
+                        <li><strong>Processo de validação:</strong>
+                            <ul>
+                                <li>Foto do colaborador cadastrada no sistema</li>
+                                <li>Foto capturada no ato da entrega</li>
+                                <li>Resultado da comparação facial</li>
+                                <li>Taxa de acerto do algoritmo (geralmente 95-99%)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <p><strong>Benefícios:</strong></p>
+                    <ul>
+                        <li>Comprovação visual da identidade do colaborador</li>
+                        <li>Rastreabilidade completa da entrega</li>
+                        <li>Segurança jurídica adicional</li>
+                        <li>Documento gerado automaticamente (sem trabalho manual)</li>
+                    </ul>
+                    
+                    <p><strong>Importante:</strong> Este termo complementa o Termo de Entrega de EPIs, fornecendo uma camada adicional de evidência da autenticidade da entrega.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funciona o processo de registro de entrega e assinatura?</summary>
+                <div class="answer">
+                    <p>O processo de entrega no BuscaEPI é composto por <strong>3 etapas principais</strong>:</p>
+                    
+                    <p><strong>1. Registro de Entrega (ato do operador):</strong></p>
+                    <ul>
+                        <li>Operador treinado (técnico de segurança, almoxarife, assistente) registra no sistema</li>
+                        <li><strong>Dados da entrega:</strong> Finalidade e data</li>
+                        <li><strong>Para cada item:</strong> Equipamento, quantidade, CA, cor/tamanho/lote, validade, previsão de troca, observações</li>
+                        <li><strong>Identificação única:</strong> Sistema gera hash composto por data/hora + identificador único</li>
+                    </ul>
+                    
+                    <p><strong>2. Assinatura do Colaborador (ato de ciência):</strong></p>
+                    <ul>
+                        <li>Colaborador reconhece o recebimento através de um dos 4 métodos de assinatura</li>
+                        <li>Cada termo deve ser assinado <strong>individualmente</strong></li>
+                        <li>Assinatura não é reutilizável (nova coleta para cada termo)</li>
+                    </ul>
+                    
+                    <p><strong>3. Armazenamento e Consolidação:</strong></p>
+                    <ul>
+                        <li>Entregas e assinaturas registradas de forma <strong>imutável</strong> no banco de dados</li>
+                        <li>Armazenamento seguro na <strong>infraestrutura Microsoft Azure</strong></li>
+                        <li>Criação automática da <strong>Ficha Eletrônica do Colaborador</strong></li>
+                        <li>Geração de QR Code para validação pública</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O que é a Ficha Eletrônica do Colaborador?</summary>
+                <div class="answer">
+                    <p>A <strong>Ficha Eletrônica de EPI</strong> substitui a ficha física tradicional, sendo o <span class="highlight">documento oficial de comprovação</span> das entregas e assinaturas.</p>
+                    
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Agrupa todos os <strong>Termos de Entrega assinados</strong> do colaborador</li>
+                        <li>Exibe informações completas de cada item (equipamento, CA, validade, lote) com a assinatura correspondente</li>
+                        <li>Quando um termo tem múltiplos itens, a assinatura é <strong>repetida para cada linha</strong> (formato "item x assinatura")</li>
+                        <li>Possui <strong>QR Code de validação</strong> que direciona à URL única e pública de verificação</li>
+                        <li><strong>Imutável:</strong> Não pode ser editada após registrada</li>
+                    </ul>
+                    
+                    <p><strong>Validade legal:</strong> Reconhecida como documento válido para auditorias, fiscalizações do trabalho e processos judiciais, em conformidade com a NR-6.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O sistema funciona sem internet (Offline)? Como funciona o aplicativo mobile?</summary>
+                <div class="answer">
+                    <p>O <strong>aplicativo BuscaEPI para Android</strong> permite registro e assinatura de entregas sem conexão com a internet.</p>
+                    
+                    <p><strong>Download:</strong> <a href="https://play.google.com/store/apps/details?id=com.buscaepi.appentrega" target="_blank">Google Play Store</a></p>
+                    
+                    <p><strong>Como funciona na prática:</strong></p>
+                    <ol>
+                        <li><strong>Sincronização prévia (online):</strong> É necessário realizar login conectado para baixar os dados de colaboradores e catálogo de equipamentos</li>
+                        <li><strong>Funcionamento offline:</strong> Após o download inicial, permite registrar entregas e coletar <strong>assinatura digitalizada (manuscrita na tela)</strong> sem internet</li>
+                        <li><strong>Armazenamento local:</strong> Informações e assinaturas ficam salvas no dispositivo móvel até a reconexão</li>
+                        <li><strong>Sincronização MANUAL:</strong> Ao reconectar à internet, o usuário deve acessar a entrega registrada offline e <strong>clicar no botão de sincronização</strong> para enviar os dados ao servidor</li>
+                        <li><strong>Status pós-sincronização:</strong> Após sincronizar, o termo é registrado com status "Ciência do Colaborador"</li>
+                        <li><strong>Integração completa:</strong> A entrega passa a compor a Ficha Eletrônica do colaborador no sistema web</li>
+                    </ol>
+                    
+                    <div class="highlight">
+                        <p><strong>⚠️ Atenção - Sincronização Manual:</strong></p>
+                        <p>A sincronização <strong>NÃO é automática</strong>. O usuário que registrou a entrega offline deve, ao retornar ao ambiente online, entrar na entrega que foi registrada e executar manualmente o processo de sincronização. Isso garante controle total sobre quando os dados serão enviados ao servidor.</p>
+                    </div>
+                    
+                    <p><strong>Importante:</strong> No modo offline, apenas a <span class="highlight">assinatura digitalizada (manuscrita na tela do dispositivo móvel)</span> está disponível. Biometria facial e digital requerem conexão com a internet.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quais são as garantias de inviolabilidade e integridade dos registros?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI implementa <strong>rigorosos controles técnicos e operacionais</strong> para garantir autenticidade e integridade:</p>
+                    
+                    <p><strong>🔒 Controles de Inviolabilidade:</strong></p>
+                    <ul>
+                        <li><strong>Termos imutáveis:</strong> Não podem ser alterados após assinatura (em caso de erro, deve cancelar e refazer)</li>
+                        <li><strong>Assinaturas individuais:</strong> Não são reutilizáveis - cada termo exige nova coleta</li>
+                        <li><strong>Sem privilégios:</strong> Nem administradores master podem manipular entregas ou substituir assinaturas</li>
+                        <li><strong>Hash criptográfico:</strong> Cada termo e ficha possui identificador único e imutável</li>
+                        <li><strong>QR Code:</strong> Validação pública através de URL única</li>
+                    </ul>
+                    
+                    <p><strong>📋 Logs e Auditoria:</strong></p>
+                    <ul>
+                        <li>Todos os acessos e ações registrados em logs de auditoria</li>
+                        <li>Rastreabilidade completa: quem, quando, onde, o quê</li>
+                        <li>Registro de IP, geolocalização e timestamp</li>
+                        <li>Armazenamento no Azure Application Insights</li>
+                    </ul>
+                    
+                    <p><strong>☁️ Infraestrutura Segura:</strong></p>
+                    <ul>
+                        <li><strong>Banco de dados:</strong> Azure SQL com criptografia transparente (TDE)</li>
+                        <li><strong>Storage de imagens:</strong> Azure Blob Storage com autenticação SAS Token</li>
+                        <li><strong>Certificações Azure:</strong> ISO 27001, ISO 27018, SOC 1/2/3, GDPR, LGPD</li>
+                        <li><strong>Backups automáticos:</strong> Semanal (completo), 12-24h (diferencial), 10 min (transações)</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Por quanto tempo os registros são mantidos no sistema?</summary>
+                <div class="answer">
+                    <p><strong>Conformidade legal com NR-6 e legislação trabalhista:</strong></p>
+                    
+                    <p><strong>📜 Prazo Legal:</strong></p>
+                    <ul>
+                        <li><strong>NR-6 + Decreto 3.048/1999 (art. 225):</strong> Fichas de controle de EPI devem ser mantidas por <strong>no mínimo 5 anos após o desligamento</strong> do trabalhador</li>
+                        <li>Podem ser exigidos em fiscalizações e processos trabalhistas</li>
+                    </ul>
+                    
+                    <p><strong>💾 Política BuscaEPI:</strong></p>
+                    <ul>
+                        <li>Registros mantidos <span class="highlight">por tempo indeterminado</span></li>
+                        <li>Garantia mínima de <strong>5 anos após inativação</strong> do colaborador</li>
+                        <li>No cancelamento do serviço, todos os dados são entregues ao cliente</li>
+                    </ul>
+                    
+                    <p><strong>🔐 Proteção de Dados:</strong></p>
+                    <ul>
+                        <li>Conformidade total com LGPD</li>
+                        <li>Dados armazenados exclusivamente no Brasil (datacenter Azure São Paulo)</li>
+                        <li>Política de retenção documentada e auditável</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>É possível realizar registros retroativos no sistema?</summary>
+                <div class="answer">
+                    <p><strong>Sim, é possível</strong>, mas com ressalvas importantes:</p>
+                    <p><strong>⚠️ ATENÇÃO:</strong> Registre retroativamente <strong>apenas entregas que você pode comprovar</strong> que foram realmente realizadas (ex: fichas físicas antigas assinadas).</p>
+                    <p><strong>NÃO RECOMENDADO:</strong> Registrar entregas antigas sem comprovação abre brecha jurídica para reclamações futuras do colaborador.</p>
+                    <p><strong>Exemplo:</strong> Se você entregou um EPI em 2022 e não registrou, não crie um registro retroativo agora sem ter a ficha física assinada.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O colaborador pode fazer requisição de EPI pelo sistema?</summary>
+                <div class="answer">
+                    <p><strong>Atualmente, pelo sistema web, não.</strong> O sistema web foi desenvolvido para que o responsável pela segurança do trabalho faça as entregas.</p>
+                    
+                    <p><strong>📱 App do Colaborador:</strong></p>
+                    <p>Possuímos um <span class="highlight">aplicativo mobile para colaboradores</span> que está sendo modernizado! Em breve, o colaborador poderá:</p>
+                    <ul>
+                        <li>✅ Realizar requisição de EPIs diretamente pelo app</li>
+                        <li>✅ Solicitar apenas EPIs vinculados à sua matriz (função/setor/GHE)</li>
+                        <li>✅ Acompanhar status das requisições</li>
+                        <li>✅ Visualizar histórico de entregas</li>
+                    </ul>
+                    
+                    <p><strong>🧪 Teste disponível:</strong></p>
+                    <p>Podemos liberar acesso teste de até <strong>15 dias</strong> para avaliar o fluxo de requisição. Para isso, é necessário que um responsável da empresa assine um termo de consentimento de uso de licença teste.</p>
+                    
+                    <p><strong>📞 Interessado?</strong></p>
+                    <p>Entre em contato com o vendedor que está atendendo sua empresa ou envie e-mail para <a href="mailto:suporte@buscaepi.com" style="color: #c0392b; text-decoration: none; font-weight: 600;">suporte@buscaepi.com</a> para avaliar esta funcionalidade.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como o sistema registra as assinaturas? Uma assinatura por item ou por entrega?</summary>
+                <div class="answer">
+                    <p><strong>Sistema inteligente:</strong> Uma assinatura por <span class="highlight">Termo de Entrega</span>, não por item individual.</p>
+                    
+                    <p><strong>Exemplo prático:</strong></p>
+                    <ul>
+                        <li>Colaborador recebe: capacete, luva e óculos na mesma data</li>
+                        <li>Sistema gera 1 (um) Termo de Entrega com os 3 itens</li>
+                        <li>Colaborador assina <strong>uma única vez</strong> declarando recebimento de tudo</li>
+                    </ul>
+                    
+                    <p><strong>Na Ficha Eletrônica:</strong> A mesma assinatura aparece ao lado de cada item, mas as colunas "Número da Entrega" e "Data da Entrega" mostram que fazem parte do mesmo recebimento.</p>
+                    
+                    <p><strong>Rastreabilidade:</strong> É possível clicar no número da entrega e acessar o Termo original completo com todos os itens.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quais são as principais funcionalidades do BuscaEPI?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI é uma plataforma completa com <strong>10 funcionalidades principais totalmente integradas</strong> para gestão de EPIs:</p>
+                    
+                    <p><strong>🧭 1. Gestão de Entregas de EPIs</strong></p>
+                    <ul>
+                        <li>Registro 100% digital eliminando papel e retrabalho</li>
+                        <li>Assinaturas com múltiplas camadas de segurança (eletrônica, biometria, FaceID)</li>
+                        <li>Controle detalhado por colaborador, função, setor, unidade e centro de custo</li>
+                        <li>Histórico completo e auditável de todas as entregas</li>
+                        <li>Registro de trocas, devoluções e pendências de assinatura</li>
+                        <li>Gestão descentralizada por unidade com consolidação central</li>
+                    </ul>
+
+                    <p><strong>👥 2. Gestão de Colaboradores</strong></p>
+                    <ul>
+                        <li>Cadastro completo: dados pessoais, função, setor, GHE e unidade</li>
+                        <li>Importação em massa via planilha Excel</li>
+                        <li>Integração via API pública com sistemas de RH, ERP ou folha de pagamento</li>
+                        <li>Ficha Eletrônica de EPI individual com histórico completo</li>
+                        <li>Alertas automáticos de troca enviados por e-mail e SMS</li>
+                    </ul>
+
+                    <p><strong>📦 3. Controle de Estoque</strong></p>
+                    <ul>
+                        <li>Gestão completa de entrada, saída e saldo em tempo real</li>
+                        <li>Controle por grade (tamanho, cor, modelo e variações)</li>
+                        <li>Estoques separados por unidade com visão consolidada</li>
+                        <li>Alertas configuráveis de estoque mínimo por item e unidade</li>
+                        <li>Relatórios de movimentações, consumo, saldo e itens vencidos</li>
+                        <li>Identificação automática de trocas antecipadas para detecção de mau uso</li>
+                    </ul>
+
+                    <p><strong>🏷️ 4. Catálogo de Produtos e EPIs</strong></p>
+                    <ul>
+                        <li>Cadastro completo: descrição, código interno, CA, fabricante, validade</li>
+                        <li>Upload de imagens dos equipamentos</li>
+                        <li>Organização por categoria, marca e tipo</li>
+                        <li>Geração automática do Book de Equipamentos com fotos</li>
+                        <li>Criação de matriz de EPIs obrigatórios por função, setor e GHE</li>
+                    </ul>
+
+                    <p><strong>📊 5. Relatórios Gerenciais e Indicadores</strong></p>
+                    <ul>
+                        <li>Relatórios de entregas por período, unidade ou colaborador</li>
+                        <li>Análise de consumo por colaborador, função, setor ou centro de custo</li>
+                        <li>Custos detalhados por período</li>
+                        <li>Dashboards executivos com pendências e consumo</li>
+                        <li>Gráficos comparativos dos últimos 12 meses</li>
+                        <li>Projeções de custo e planejamento orçamentário</li>
+                    </ul>
+
+                    <p><strong>🔐 6. Assinaturas e Autenticações</strong></p>
+                    <ul>
+                        <li>Assinatura eletrônica com registro de IP e geolocalização</li>
+                        <li>Biometria digital com leitores homologados</li>
+                        <li>Reconhecimento facial (FaceID) com acurácia superior a 95%</li>
+                        <li>Validade jurídica completa e rastreabilidade total</li>
+                    </ul>
+
+                    <p><strong>⚙️ 7. Integrações e Automatizações</strong></p>
+                    <ul>
+                        <li>API pública aberta pronta para uso (incluída na licença)</li>
+                        <li>Endpoints seguros para envio e recebimento de dados</li>
+                        <li>Integração com ERP, RH, folha de pagamento</li>
+                        <li>Padrões que facilitam integrações com sistemas corporativos</li>
+                    </ul>
+
+                    <p><strong>👤 8. Perfis e Permissões</strong></p>
+                    <ul>
+                        <li><strong>Perfis nativos do sistema:</strong> Master, Administrador, Responsável pela Entrega, Operacional e Consulta</li>
+                        <li><strong>Controle granular:</strong> Cada perfil possui permissões específicas para diferentes áreas do sistema</li>
+                        <li><strong>Perfil Master:</strong> Acesso total ao sistema, incluindo configurações sensíveis, relatórios financeiros e gestão de usuários</li>
+                        <li><strong>Perfil Administrador:</strong> Gestão completa de colaboradores, EPIs, entregas e relatórios (sem acesso a configurações críticas)</li>
+                        <li><strong>Perfil Responsável pela Entrega:</strong> Foco em operação - registra entregas, assinaturas e movimentações de estoque</li>
+                        <li><strong>Perfil Operacional:</strong> Acesso limitado para tarefas específicas do dia a dia</li>
+                        <li><strong>Perfil Consulta:</strong> Visualização de dados e relatórios sem permissão para alterações</li>
+                        <li><strong>Personalização:</strong> Possibilidade de ajustar permissões dentro de cada perfil conforme necessidade da empresa</li>
+                        <li><strong>Segurança:</strong> Registro completo de auditoria com histórico de todas as ações por usuário</li>
+                        <li><strong>Multi-unidade:</strong> Controle de acesso por unidade/filial para gestão descentralizada</li>
+                    </ul>
+
+                    <p><strong>📄 9. Documentos e Termos Digitais</strong></p>
+                    <ul>
+                        <li>Termos individuais de entrega e troca</li>
+                        <li>Termos de uniformes e ferramentas</li>
+                        <li>Ficha eletrônica de EPI completa</li>
+                        <li>Armazenamento em nuvem com acesso rápido</li>
+                    </ul>
+
+                    <p><strong>☁️ 10. Acesso, Infraestrutura e Segurança</strong></p>
+                    <ul>
+                        <li>Sistema 100% em nuvem acessível via navegador</li>
+                        <li>Infraestrutura Microsoft Azure SQL Database</li>
+                        <li>Backups completos semanais + diferenciais a cada 12-24h</li>
+                        <li>Backups de log de transações a cada 10 minutos</li>
+                        <li>Alta disponibilidade, segurança e integridade garantidas</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como o BuscaEPI ajuda a reduzir custos operacionais com EPIs?</summary>
+                <div class="answer">
+                    <p>O sistema oferece <strong>múltiplas funcionalidades de redução de custos</strong> que impactam diretamente o resultado financeiro:</p>
+                    
+                    <p><strong>💰 Controle Financeiro Preciso:</strong></p>
+                    <ul>
+                        <li><strong>Custo por colaborador:</strong> Rastreamento exato de quanto cada funcionário consome</li>
+                        <li><strong>Custo por função:</strong> Identifica funções com maior gasto para ações específicas</li>
+                        <li><strong>Custo por setor:</strong> Compara gastos entre departamentos</li>
+                        <li><strong>Custo por unidade:</strong> Análise comparativa entre filiais/obras</li>
+                        <li><strong>Histórico completo:</strong> Base para negociação com fornecedores</li>
+                    </ul>
+
+                    <p><strong>🔍 Identificação de Desperdícios e Perdas:</strong></p>
+                    <ul>
+                        <li><strong>Trocas antecipadas:</strong> Alerta quando EPI é trocado antes do prazo esperado</li>
+                        <li><strong>Perdas frequentes:</strong> Identifica colaboradores com alto índice de extravios</li>
+                        <li><strong>Mau uso detectado:</strong> Padrões anormais que indicam uso inadequado</li>
+                        <li><strong>Baixa qualidade:</strong> Fornecedores cujos produtos duram menos que o esperado</li>
+                        <li><strong>Base para ações corretivas:</strong> Treinamentos, advertências ou troca de fornecedor</li>
+                    </ul>
+
+                    <p><strong>📊 Otimização de Compras:</strong></p>
+                    <ul>
+                        <li><strong>Alertas de estoque mínimo:</strong> Elimina compras emergenciais (mais caras)</li>
+                        <li><strong>Histórico de consumo:</strong> Previsão precisa de necessidades futuras</li>
+                        <li><strong>Planejamento orçamentário:</strong> Facilita negociação de melhores preços</li>
+                        <li><strong>Compras consolidadas:</strong> Visão corporativa permite ganho em volume</li>
+                        <li><strong>Redução de obsolescência:</strong> Compra apenas o necessário</li>
+                    </ul>
+
+                    <p><strong>⚖️ Redução de Passivo Trabalhista:</strong></p>
+                    <ul>
+                        <li>Comprovação irrefutável de entregas evita processos indevidos</li>
+                        <li>Base legal para cobranças em casos de extravio por mau uso</li>
+                        <li>Reduz significativamente riscos de multas e indenizações</li>
+                    </ul>
+
+                    <div class="highlight">
+                        <p><strong>💡 Exemplo de Economia Possível:</strong></p>
+                        <p>Uma empresa com 500 colaboradores pode identificar através do BuscaEPI que 15% das trocas de botinas são antecipadas. Com os dados do sistema, é possível investigar e descobrir uso inadequado de botinas para atividades não previstas. Ações corretivas (treinamento + fornecimento de EPI específico) podem resultar em economia de até <strong>R$ 45.000/ano apenas neste item</strong>.</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O sistema gerencia apenas EPIs ou também outros itens?</summary>
+                <div class="answer">
+                    <p><strong>O BuscaEPI gerencia EPIs, EPCs, uniformes e ferramentas</strong> com as mesmas funcionalidades robustas:</p>
+                    
+                    <p><strong>🦺 EPIs (Equipamentos de Proteção Individual):</strong></p>
+                    <ul>
+                        <li>Botinas, capacetes, luvas, óculos, protetores auriculares</li>
+                        <li>Máscaras respiratórias, aventais, mangotes</li>
+                        <li>Cintos de segurança, talabartes, equipamentos para altura</li>
+                        <li>Qualquer equipamento com CA (Certificado de Aprovação)</li>
+                        <li><strong>Controle rigoroso de CA e validade</strong></li>
+                    </ul>
+
+                    <p><strong>🏗️ EPCs (Equipamentos de Proteção Coletiva):</strong></p>
+                    <ul>
+                        <li>Extintores de incêndio (com controle de recarga)</li>
+                        <li>Kits de primeiros socorros</li>
+                        <li>Sinalização de segurança</li>
+                        <li>Equipamentos de proteção coletiva do ambiente</li>
+                        <li><strong>Controle de manutenção periódica</strong></li>
+                    </ul>
+
+                    <p><strong>👕 Uniformes e Vestimentas Profissionais:</strong></p>
+                    <ul>
+                        <li>Uniformes corporativos completos</li>
+                        <li>Camisas, calças, jalecos, macacões</li>
+                        <li>Controle detalhado por tamanho, cor e modelo</li>
+                        <li>Gestão de troca periódica programada</li>
+                        <li><strong>Controle de grades (P, M, G, GG, etc.)</strong></li>
+                    </ul>
+
+                    <p><strong>🔧 Ferramentas e Instrumentos de Trabalho:</strong></p>
+                    <ul>
+                        <li>Ferramentas manuais e elétricas</li>
+                        <li>Instrumentos de medição e precisão</li>
+                        <li>Equipamentos específicos por função</li>
+                        <li>Rastreamento completo de uso e devolução</li>
+                        <li><strong>Responsabilização individual</strong></li>
+                    </ul>
+
+                    <p><strong>✅ Funcionalidades Aplicadas a Todos os Tipos:</strong></p>
+                    <ul>
+                        <li>Controle de entrega com assinatura digital</li>
+                        <li>Gestão de estoque multi-unidade</li>
+                        <li>Alertas de troca ou manutenção</li>
+                        <li>Relatórios de consumo e custos</li>
+                        <li>Histórico individual por colaborador</li>
+                        <li>Ficha eletrônica completa</li>
+                    </ul>
+
+                    <div class="highlight">
+                        <p><strong>📦 Módulo de Gestão de Ativos (Contratação Adicional):</strong></p>
+                        <p>O BuscaEPI possui um <strong>Módulo de Controle de Ativos</strong> disponível como funcionalidade adicional, que expande ainda mais as capacidades do sistema para gerenciar:</p>
+                        <ul>
+                            <li><strong>Equipamentos e máquinas:</strong> Computadores, impressoras, tablets, smartphones, veículos, maquinário industrial</li>
+                            <li><strong>Mobiliário:</strong> Mesas, cadeiras, armários, estações de trabalho</li>
+                            <li><strong>Eletrônicos:</strong> Monitores, projetores, equipamentos de áudio e vídeo</li>
+                            <li><strong>Ativos de TI:</strong> Servidores, switches, roteadores, licenças de software</li>
+                            <li><strong>Qualquer ativo empresarial:</strong> Controle patrimonial completo</li>
+                        </ul>
+                        <p><strong>Funcionalidades do módulo:</strong></p>
+                        <ul>
+                            <li>Controle de empréstimo e devolução com assinatura digital</li>
+                            <li>Rastreamento de localização e responsável atual</li>
+                            <li>Histórico completo de movimentações</li>
+                            <li>Alertas de manutenção programada</li>
+                            <li>Relatórios de inventário e depreciação</li>
+                            <li>Integração total com a base de colaboradores</li>
+                        </ul>
+                        <p><strong>📞 Como contratar:</strong></p>
+                        <p>O Módulo de Gestão de Ativos é uma <strong>funcionalidade adicional</strong> que pode ser adicionada à sua licença do BuscaEPI. Entre em contato com o suporte comercial para conhecer os valores e ativar o módulo.</p>
+                        <p><strong>📚 Documentação:</strong> <a href="https://safetytec.octadesk.com/kb/article/modulo-de-controle-de-ativos" target="_blank">Acesse o guia completo de configuração do Módulo de Controle de Ativos</a></p>
+                    </div>
+
+                    <div class="highlight">
+                        <p><strong>🎯 Vantagem Estratégica:</strong></p>
+                        <p>Centralizar a gestão de EPIs, EPCs, uniformes, ferramentas e ativos empresariais em uma <strong>única plataforma integrada</strong> proporciona visão consolidada de custos, otimiza processos operacionais, facilita auditorias e elimina sistemas paralelos.</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O BuscaEPI possui módulo de Ordem de Serviço (OS)?</summary>
+                <div class="answer">
+                    <p><strong>Sim!</strong> O BuscaEPI conta com um <strong>Módulo de Ordem de Serviço (OS)</strong> disponível como funcionalidade adicional.</p>
+                    
+                    <p><strong>🔧 Para que serve o Módulo de OS?</strong></p>
+                    <p>O módulo foi desenvolvido para gerenciar e documentar serviços de manutenção, reparos e inspeções de equipamentos, EPIs, EPCs e ativos da empresa, centralizando todo o controle de manutenção em uma única plataforma.</p>
+                    
+                    <p><strong>📋 Principais Funcionalidades:</strong></p>
+                    <ul>
+                        <li><strong>Abertura de OS:</strong> Criação de ordens de serviço para manutenção preventiva, corretiva ou inspeções</li>
+                        <li><strong>Controle de status:</strong> Acompanhamento em tempo real (aberta, em andamento, concluída, cancelada)</li>
+                        <li><strong>Histórico completo:</strong> Registro detalhado de todas as manutenções realizadas por equipamento</li>
+                        <li><strong>Vinculação de ativos:</strong> Associação direta com equipamentos, EPIs, EPCs ou ativos cadastrados</li>
+                        <li><strong>Responsáveis e executores:</strong> Atribuição de responsável pela OS e equipe executora</li>
+                        <li><strong>Documentação:</strong> Anexo de fotos, laudos, certificados e documentos relacionados</li>
+                        <li><strong>Agendamento:</strong> Programação de manutenções preventivas com alertas automáticos</li>
+                        <li><strong>Custo por OS:</strong> Controle de custos de mão de obra, peças e materiais utilizados</li>
+                        <li><strong>Relatórios gerenciais:</strong> Análise de custos, frequência de manutenções, tempo médio de execução</li>
+                        <li><strong>Rastreabilidade:</strong> Garantia de conformidade com normas regulamentadoras</li>
+                    </ul>
+
+                    <p><strong>✅ Benefícios do Módulo de OS:</strong></p>
+                    <ul>
+                        <li><strong>Conformidade:</strong> Documentação completa para auditorias e fiscalizações</li>
+                        <li><strong>Previsibilidade:</strong> Manutenções preventivas evitam paradas não planejadas</li>
+                        <li><strong>Controle de custos:</strong> Visibilidade total dos gastos com manutenção</li>
+                        <li><strong>Histórico centralizado:</strong> Todas as informações em um único lugar</li>
+                        <li><strong>Integração total:</strong> Funciona em conjunto com o controle de EPIs, EPCs e ativos</li>
+                        <li><strong>Redução de riscos:</strong> Equipamentos sempre em condições adequadas de uso</li>
+                    </ul>
+
+                    <p><strong>🎯 Casos de Uso:</strong></p>
+                    <ul>
+                        <li>Manutenção de extintores de incêndio</li>
+                        <li>Inspeção periódica de equipamentos de altura (cintos, talabartes)</li>
+                        <li>Calibração de instrumentos de medição</li>
+                        <li>Manutenção de veículos e máquinas industriais</li>
+                        <li>Recarga e teste de equipamentos respiratórios</li>
+                        <li>Manutenção preventiva de ativos de TI</li>
+                        <li>Qualquer serviço que necessite rastreabilidade e documentação</li>
+                    </ul>
+
+                    <div class="highlight">
+                        <p><strong>📞 Como contratar:</strong></p>
+                        <p>O Módulo de Ordem de Serviço é uma <strong>funcionalidade adicional</strong> que pode ser adicionada à sua licença do BuscaEPI. Entre em contato com o suporte comercial para conhecer os valores e ativar o módulo.</p>
+                        <p><strong>📚 Documentação:</strong> <a href="https://safetytec.octadesk.com/kb/article/configurando-o-modulo-os-ordem-de-servico" target="_blank">Acesse o guia completo de configuração do Módulo de OS</a></p>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 3: LICENCIAMENTO E CONTRATAÇÃO -->
+    <div class="faq-section">
+        <div class="section-header">
+            <span class="section-icon">💰</span>
+            <h2 class="section-title">Licenciamento e Contratação</h2>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como é calculada a cobrança? O valor muda automaticamente?</summary>
+                <div class="answer">
+                    <p>O valor é baseado na quantidade de <strong>Vidas Contratadas</strong> (limite de cadastros ativos no plano) e usuários do sistema.</p>
+                    <p><strong>⚠️ IMPORTANTE:</strong> O ajuste de fatura <span class="highlight">NÃO é automático</span>.</p>
+                    <p><strong>Como funciona:</strong></p>
+                    <ul>
+                        <li>Você contrata um número específico de vidas (ex: 100 colaboradores)</li>
+                        <li>Pode cadastrar até esse limite de colaboradores</li>
+                        <li>Colaboradores inativos não são contabilizados</li>
+                        <li>Para aumentar ou reduzir vidas, é necessário solicitar formalmente ao suporte</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funciona o controle de colaboradores inativos?</summary>
+                <div class="answer">
+                    <p><strong>Gestão de inativos:</strong></p>
+                    <ul>
+                        <li>Colaboradores demitidos devem ser <strong>inativados</strong> no sistema (não excluídos)</li>
+                        <li><span class="highlight">Inativos NÃO são contabilizados na licença</span></li>
+                        <li>Você pode cadastrar novo colaborador no lugar</li>
+                        <li>Fichas de inativos ficam disponíveis para consulta por no mínimo 5 anos</li>
+                        <li>Para localizar, basta filtrar por "inativo" nos relatórios</li>
+                    </ul>
+                    <p><strong>Vantagem:</strong> Mantém histórico completo para auditorias sem ocupar vagas da licença.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Posso gerenciar mais de um CNPJ na mesma licença?</summary>
+                <div class="answer">
+                    <p><strong>Sim.</strong> O sistema suporta <span class="highlight">gestão Multi-Empresa</span> (Matriz e Filiais) em um único contrato.</p>
+                    <p><strong>Vantagens:</strong></p>
+                    <ul>
+                        <li>Cobrança consolidada pela soma total de vidas do grupo</li>
+                        <li>Controle centralizado de custos</li>
+                        <li>Estoques separados por unidade</li>
+                        <li>Relatórios por unidade ou consolidado</li>
+                        <li>Gestão descentralizada com visão corporativa</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Existe multa por cancelamento?</summary>
+                <div class="answer">
+                    <p><strong>Não há multa ou fidelidade.</strong> Solicitamos apenas aviso prévio de 20 a 30 dias ao suporte.</p>
+                    <p><strong>No encerramento, garantimos:</strong></p>
+                    <ul>
+                        <li>Exportação completa de todos os dados lançados</li>
+                        <li>Todas as fichas assinadas em formato PDF</li>
+                        <li>Arquivo compilado com informações de todos os colaboradores</li>
+                    </ul>
+                    <p>Você terá tudo necessário para cumprimento da guarda legal de 5 anos.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 4: TÉCNICO E INFRAESTRUTURA -->
+    <div class="faq-section">
+        <div class="section-header">
+            <span class="section-icon">🔧</span>
+            <h2 class="section-title">Implantação e Integração Técnica</h2>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funciona a importação de dados?</summary>
+                <div class="answer">
+                    <p><strong>Processo simplificado:</strong></p>
+                    <ol>
+                        <li>Fornecemos <strong>planilhas modelo</strong> (colaboradores e catálogo)</li>
+                        <li>Você preenche com seus dados</li>
+                        <li>Nossa equipe de Suporte realiza a carga inicial em massa</li>
+                        <li>Ambiente entregue <span class="highlight">pronto para uso em até 48h úteis</span></li>
+                    </ol>
+                    <p><strong>Você não precisa fazer cadastros manuais!</strong> Todo o input inicial é feito pela nossa equipe.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>É possível integrar com meu ERP ou sistema de RH?</summary>
+                <div class="answer">
+                    <p><strong>Sim.</strong> O BuscaEPI oferece <strong>duas formas de integração</strong>: <span class="highlight">API REST</span> e <span class="highlight">Webhooks</span>, ambos incluídos na licença.</p>
+                    
+                    <p><strong>📡 Opção 1: API REST (Consulta Ativa)</strong></p>
+                    <ul>
+                        <li>API REST disponível sem custo adicional</li>
+                        <li>Documentação completa em: https://api.buscaepi.com/v1/doc</li>
+                        <li>Seu sistema "consulta" o BuscaEPI quando precisa de dados</li>
+                        <li>Integração com SAP, TOTVS, Senior, RM, Protheus e outros</li>
+                        <li>Implementação feita pela equipe de TI da empresa ou fornecedor do ERP</li>
+                    </ul>
+                    
+                    <p><strong>🔔 Opção 2: Webhooks (Notificação em Tempo Real)</strong></p>
+                    <ul>
+                        <li><strong>O que é:</strong> BuscaEPI "avisa" seu sistema automaticamente quando algo acontece</li>
+                        <li><strong>Como funciona:</strong> Quando ocorre um evento (ex: movimentação de estoque), o BuscaEPI envia uma requisição HTTP POST para a URL que você configurar</li>
+                        <li><strong>Evento disponível:</strong> <code>buscaepi-mov-estoque</code></li>
+                        <li><strong>Situações notificadas:</strong>
+                            <ul>
+                                <li>Entrega de equipamentos (saída)</li>
+                                <li>Cancelamento de entrega (entrada)</li>
+                                <li>Movimentação manual de estoque</li>
+                                <li>Devolução de equipamentos (entrada)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <p><strong>📦 Dados enviados no Webhook:</strong></p>
+                    <ul>
+                        <li>ID da movimentação e tipo de operação (entrada/saída)</li>
+                        <li>Quantidade, preço unitário e observações</li>
+                        <li>SKU, nome do item e ID do produto</li>
+                        <li>Dados do colaborador (quando aplicável)</li>
+                        <li>Unidade/filial onde ocorreu a movimentação</li>
+                        <li>Data/hora completa do evento</li>
+                    </ul>
+                    
+                    <p><strong>🚀 Como habilitar Webhook:</strong></p>
+                    <ol>
+                        <li>Envie e-mail para <strong><a href="mailto:suporte@buscaepi.com" style="color: #c0392b; text-decoration: none; font-weight: 600;">suporte@buscaepi.com</a></strong> solicitando habilitação</li>
+                        <li>Informe a URL do seu endpoint que receberá as notificações (HTTP POST)</li>
+                        <li>Opcionalmente, informe header de autorização (token Bearer ou API key)</li>
+                        <li>Configure seu endpoint para retornar HTTP 200 OK ao receber notificações</li>
+                    </ol>
+                    
+                    <p><strong>⚙️ Principais sincronizações (API ou Webhook):</strong></p>
+                    <ul>
+                        <li>Admissões e demissões automáticas</li>
+                        <li>Atualização de dados cadastrais</li>
+                        <li>Movimentações de estoque em tempo real</li>
+                        <li>Entradas e saídas de materiais</li>
+                    </ul>
+                    
+                    <p><strong>💡 Qual escolher?</strong></p>
+                    <ul>
+                        <li><strong>API REST:</strong> Melhor quando seu sistema precisa "buscar" dados sob demanda</li>
+                        <li><strong>Webhook:</strong> Melhor para atualizações automáticas em tempo real (ex: sincronizar estoque imediatamente após cada entrega)</li>
+                        <li><strong>Combinação:</strong> Muitos clientes usam ambos - API para consultas e Webhook para notificações</li>
+                    </ul>
+                    
+                    <p><strong>⚠️ Importante:</strong> A integração requer desenvolvimento por parte do cliente ou do fornecedor do ERP. O BuscaEPI fornece toda a estrutura técnica pronta (API documentada, endpoints seguros e webhooks configuráveis).</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O que são Webhooks e como funcionam no BuscaEPI?</summary>
+                <div class="answer">
+                    <p><strong>Webhook</strong> é uma forma de integração baseada em <span class="highlight">eventos em tempo real</span>.</p>
+                    
+                    <p><strong>🔔 Como funciona:</strong></p>
+                    <p>Em vez do seu sistema ficar "perguntando" (fazendo consultas) se algo mudou, o <strong>BuscaEPI avisa automaticamente</strong> quando um evento acontece, enviando uma requisição HTTP POST para uma URL que você configurar.</p>
+                    
+                    <p><strong>Analogia:</strong> É como receber uma <strong>notificação push</strong> no celular - você é avisado imediatamente quando algo relevante acontece.</p>
+                    
+                    <p><strong>📡 Evento disponível: <code>buscaepi-mov-estoque</code></strong></p>
+                    <p>Notifica quando há movimentação de estoque, permitindo que seu ERP seja atualizado automaticamente.</p>
+                    
+                    <p><strong>Situações que disparam o webhook:</strong></p>
+                    <ul>
+                        <li>✅ Entrega de equipamentos (saída de estoque)</li>
+                        <li>✅ Cancelamento de entrega (entrada de estoque)</li>
+                        <li>✅ Movimentação manual de estoque (entrada ou saída)</li>
+                        <li>✅ Devolução de equipamentos (entrada de estoque)</li>
+                    </ul>
+                    
+                    <p><strong>📦 Exemplo de dados recebidos (JSON):</strong></p>
+                    <div class="code-block">
+{
+  "evento": "buscaepi-mov-estoque",
+  "dataHora": "2025-09-10T03:04:22Z",
+  "dados": {
+    "id_mov_estoque": 99999,
+    "tipo_mov_estoque": "Saída Manual",
+    "operacao": "S",
+    "qtde": 1,
+    "preco_unit": 47.69,
+    "sku": "EPI-0043-001",
+    "item": "AVENTAL DE RASPA",
+    "matricula_colaborador": "12345",
+    "nome_colaborador": "João Silva",
+    "cod_unidade": "256",
+    "unidade": "ALMOXARIFADO CENTRAL"
+  }
+}
+                    </div>
+                    
+                    <p><strong>🛠️ Estrutura de dados completa:</strong></p>
+                    <ul>
+                        <li><strong>evento:</strong> Nome do evento (<code>buscaepi-mov-estoque</code>)</li>
+                        <li><strong>dataHora:</strong> Data/hora UTC do disparo</li>
+                        <li><strong>id_mov_estoque:</strong> Identificador único da movimentação</li>
+                        <li><strong>tipo_mov_estoque:</strong> Tipo (Entrega, Devolução, Saída Manual, etc.)</li>
+                        <li><strong>operacao:</strong> "S" = Saída ou "E" = Entrada</li>
+                        <li><strong>qtde:</strong> Quantidade movimentada</li>
+                        <li><strong>preco_unit:</strong> Valor unitário do item</li>
+                        <li><strong>sku:</strong> Código SKU do item</li>
+                        <li><strong>item:</strong> Nome/descrição do equipamento</li>
+                        <li><strong>matricula_colaborador:</strong> Matrícula (quando aplicável)</li>
+                        <li><strong>nome_colaborador:</strong> Nome do colaborador (quando aplicável)</li>
+                        <li><strong>cod_unidade e unidade:</strong> Código e nome da unidade</li>
+                        <li><strong>obs:</strong> Observações informadas pelo operador</li>
+                    </ul>
+                    
+                    <p><strong>⚙️ Como configurar:</strong></p>
+                    <ol>
+                        <li>Prepare um <strong>endpoint HTTPS</strong> no seu sistema que aceite POST com JSON</li>
+                        <li>Configure o endpoint para processar os dados e retornar <strong>HTTP 200 OK</strong></li>
+                        <li>Envie e-mail para <strong><a href="mailto:suporte@buscaepi.com" style="color: #c0392b; text-decoration: none; font-weight: 600;">suporte@buscaepi.com</a></strong> informando:
+                            <ul>
+                                <li>URL do endpoint</li>
+                                <li>Header de autorização (opcional, ex: Bearer token)</li>
+                            </ul>
+                        </li>
+                        <li>Equipe BuscaEPI habilita o webhook</li>
+                        <li>Sistema passa a receber notificações em tempo real!</li>
+                    </ol>
+                    
+                    <p><strong>✅ Boas práticas:</strong></p>
+                    <ul>
+                        <li>Use <strong>HTTPS</strong> para segurança</li>
+                        <li>Implemente <strong>autenticação</strong> no endpoint (token ou API key)</li>
+                        <li>Mantenha endpoint <strong>disponível 24/7</strong></li>
+                        <li>Retorne <strong>HTTP 200</strong> rapidamente (processe de forma assíncrona se necessário)</li>
+                        <li>Implemente <strong>log de erros</strong> para debugging</li>
+                    </ul>
+                    
+                    <p><strong>💡 Vantagem principal:</strong> Sincronização automática e instantânea entre BuscaEPI e seu ERP, sem necessidade de consultas periódicas ou processos batch.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>BuscaEPI tem integração nativa com algum ERP?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI disponibiliza <strong>API pública aberta</strong>, já pronta para uso, que permite integração com qualquer sistema corporativo.</p>
+                    
+                    <p><strong>Como funciona:</strong></p>
+                    <ol>
+                        <li>BuscaEPI libera acesso à API e documentação técnica</li>
+                        <li>Empresa, junto com seu ERP ou equipe de TI, desenvolve a integração</li>
+                        <li>Após testes e validação, sistemas operam integrados</li>
+                    </ol>
+                    
+                    <p><strong>Clientes atuais:</strong> Diversas empresas já utilizam a API integrada com seus ERPs, validando a robustez e estabilidade da solução.</p>
+                    
+                    <p><strong>💡 Recomendação:</strong> Muitos clientes implantam primeiro o BuscaEPI de forma independente, validam os processos e depois realizam a integração de forma estruturada.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Corro o risco de perder as informações lançadas no sistema?</summary>
+                <div class="answer">
+                    <p><strong>Não.</strong> O BuscaEPI é 100% em nuvem com <span class="highlight">infraestrutura corporativa Microsoft Azure</span>, uma das plataformas mais confiáveis e seguras do mundo.</p>
+                    
+                    <p><strong>☁️ Arquitetura em 3 Pilares:</strong></p>
+                    
+                    <p><strong>1️⃣ Aplicações - Azure App Service (PaaS):</strong></p>
+                    <ul>
+                        <li>Aplicação C# / ASP.NET hospedada em ambiente gerenciado</li>
+                        <li><strong>Escalabilidade automática</strong> vertical e horizontal</li>
+                        <li><strong>Alta disponibilidade com SLA de 99,95%</strong></li>
+                        <li>Gerenciamento zero de infraestrutura (patches, SO, balanceamento de carga)</li>
+                        <li>HTTPS com certificados SSL/TLS gerenciados automaticamente</li>
+                        <li>Integração com WAF (Web Application Firewall)</li>
+                    </ul>
+                    
+                    <p><strong>2️⃣ Banco de Dados - Azure SQL Database:</strong></p>
+                    <ul>
+                        <li>Serviço de banco de dados relacional totalmente gerenciado</li>
+                        <li><strong>Backups automáticos com retenção de até 35 dias</strong></li>
+                        <li><strong>Point-in-Time Restore</strong> (restauração em qualquer momento)</li>
+                        <li><strong>Alta disponibilidade com failover automático</strong></li>
+                        <li><strong>SLA de 99,99%</strong></li>
+                        <li>Proteção contra ameaças com Azure Defender for SQL</li>
+                        <li>Escalonamento elástico de performance (DTUs ou vCores)</li>
+                    </ul>
+                    
+                    <p><strong>3️⃣ Armazenamento - Azure Storage (File Share):</strong></p>
+                    <ul>
+                        <li>PDFs, assinaturas e fotos armazenados no Azure File Share</li>
+                        <li><strong>Snapshots e backup automático</strong> via Azure Backup</li>
+                        <li>Escalabilidade automática de volume e performance</li>
+                        <li>Alta durabilidade com replicação geo-redundante (GRS)</li>
+                        <li><strong>SLA de 99,9%</strong></li>
+                        <li>Controle de acesso com ACLs e criptografia AES-256</li>
+                    </ul>
+                    
+                    <p><strong>📦 Estratégia de Backup Automatizada:</strong></p>
+                    <ul>
+                        <li><strong>Backup completo:</strong> Toda semana</li>
+                        <li><strong>Backup diferencial:</strong> A cada 12-24 horas</li>
+                        <li><strong>Backup de transações:</strong> A cada 10 minutos (aproximadamente)</li>
+                        <li><strong>Retenção:</strong> Até 35 dias disponíveis</li>
+                        <li><strong>Recuperação:</strong> Point-in-Time Restore (qualquer momento no tempo)</li>
+                    </ul>
+                    
+                    <p><strong>🔐 Segurança Multicamadas:</strong></p>
+                    <ul>
+                        <li><strong>Criptografia em repouso:</strong> Transparent Data Encryption (TDE) + AES-256</li>
+                        <li><strong>Criptografia em trânsito:</strong> TLS/SSL em todas as comunicações</li>
+                        <li><strong>Autenticação:</strong> Azure AD + MFA disponível</li>
+                        <li><strong>Firewall:</strong> Regras por IP + WAF</li>
+                        <li><strong>Monitoramento:</strong> Azure Monitor + Application Insights + Log Analytics</li>
+                        <li><strong>Auditoria:</strong> Logs completos de acesso e operações</li>
+                        <li><strong>RBAC:</strong> Controle de acesso baseado em função</li>
+                    </ul>
+                    
+                    <p><strong>✅ Seus dados estão protegidos com:</strong></p>
+                    <ul>
+                        <li>Alta disponibilidade (99,95% a 99,99% SLA)</li>
+                        <li>Redundância geográfica</li>
+                        <li>Backups automatizados contínuos</li>
+                        <li>Recuperação em qualquer ponto no tempo</li>
+                        <li>Segurança corporativa nível enterprise</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O mesmo usuário pode ser utilizado em vários dispositivos ao mesmo tempo?</summary>
+                <div class="answer">
+                    <p><strong>Sim, é possível.</strong> Não há limite de dispositivos por usuário.</p>
+                    
+                    <p><strong>Como identificar o responsável pela entrega?</strong></p>
+                    <p>Em todo termo de entrega fica registrado:</p>
+                    <ul>
+                        <li><strong>IP da rede</strong> onde o dispositivo está conectado</li>
+                        <li><strong>Geolocalização</strong> (se disponível)</li>
+                        <li><strong>Data e hora precisa</strong></li>
+                        <li><strong>Usuário logado</strong> no momento</li>
+                    </ul>
+                    
+                    <p>Através do IP da rede você consegue identificar onde o dispositivo estava conectado no momento da entrega, auxiliando na identificação do responsável físico.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Terei muito trabalho cadastrando tudo no sistema?</summary>
+                <div class="answer">
+                    <p><strong>Cadastro inicial: NÃO!</strong> A equipe BuscaEPI faz toda a carga inicial de dados.</p>
+                    
+                    <p><strong>Processo facilitado na implantação:</strong></p>
+                    <ol>
+                        <li>Ao contratar, recebe 2 planilhas modelo (colaboradores e catálogo)</li>
+                        <li>Preenche com seus dados (ou extrai do seu sistema atual)</li>
+                        <li>Envia para o suporte</li>
+                        <li><strong>Equipe BuscaEPI faz toda a carga de dados</strong></li>
+                        <li>Sistema entregue pronto para uso!</li>
+                    </ol>
+                    
+                    <p><strong>Cadastros posteriores:</strong> A própria empresa cadastra novos colaboradores e itens conforme necessário, diretamente no sistema de forma simples e intuitiva.</p>
+                    
+                    <p><strong>Resumo:</strong> Na implantação, você só organiza os dados em planilha - nós fazemos o input. Depois disso, cadastros novos são feitos pela sua equipe no próprio sistema.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Mais informações sobre o Datacenter e segurança</summary>
+                <div class="answer">
+                    <p><strong>Hospedagem 100% Microsoft Azure</strong> - Uma das maiores e mais confiáveis plataformas de computação em nuvem do mundo.</p>
+                    
+                    <p><strong>🏢 Datacenter:</strong> Microsoft Azure (São Paulo, Brasil - Região Brazil South)</p>
+                    
+                    <p><strong>💻 Arquitetura Completa:</strong></p>
+                    
+                    <p><strong>Camada de Aplicação:</strong></p>
+                    <ul>
+                        <li><strong>Plataforma:</strong> Azure App Service (PaaS - Platform as a Service)</li>
+                        <li><strong>Tecnologia:</strong> C# / ASP.NET Core</li>
+                        <li><strong>Escalabilidade:</strong> Automática baseada em carga (CPU/memória/conexões)</li>
+                        <li><strong>SLA:</strong> 99,95% de disponibilidade</li>
+                        <li><strong>Deploy:</strong> CI/CD com Azure DevOps</li>
+                        <li><strong>Isolamento:</strong> Ambiente segregado por cliente/instância</li>
+                    </ul>
+                    
+                    <p><strong>Camada de Dados:</strong></p>
+                    <ul>
+                        <li><strong>Banco:</strong> Azure SQL Database (totalmente gerenciado)</li>
+                        <li><strong>SLA:</strong> 99,99% de disponibilidade</li>
+                        <li><strong>Failover:</strong> Automático com réplicas secundárias</li>
+                        <li><strong>Backup:</strong> Automático contínuo (retenção 35 dias)</li>
+                        <li><strong>Recovery:</strong> Point-in-Time Restore</li>
+                        <li><strong>Proteção:</strong> Azure Defender for SQL habilitado</li>
+                    </ul>
+                    
+                    <p><strong>Camada de Armazenamento:</strong></p>
+                    <ul>
+                        <li><strong>Storage:</strong> Azure File Share + Blob Storage</li>
+                        <li><strong>Protocolo:</strong> SMB 3.0 e REST APIs</li>
+                        <li><strong>Replicação:</strong> Geo-redundante (GRS)</li>
+                        <li><strong>SLA:</strong> 99,9% de disponibilidade</li>
+                        <li><strong>Backup:</strong> Snapshots automáticos via Azure Backup</li>
+                    </ul>
+                    
+                    <p><strong>🔐 Segurança Multinível:</strong></p>
+                    
+                    <p><strong>Criptografia:</strong></p>
+                    <ul>
+                        <li><strong>Em repouso:</strong> Transparent Data Encryption (TDE) + AES-256</li>
+                        <li><strong>Em trânsito:</strong> TLS 1.2+ em todas as comunicações</li>
+                        <li><strong>SSL/TLS:</strong> Certificados gerenciados automaticamente</li>
+                    </ul>
+                    
+                    <p><strong>Controles de Acesso:</strong></p>
+                    <ul>
+                        <li><strong>Autenticação:</strong> Azure Active Directory + MFA</li>
+                        <li><strong>Autorização:</strong> RBAC (Role-Based Access Control)</li>
+                        <li><strong>Firewall:</strong> Regras por IP e ranges permitidos</li>
+                        <li><strong>WAF:</strong> Web Application Firewall integrado</li>
+                        <li><strong>ACLs:</strong> Controle granular de permissões em arquivos</li>
+                    </ul>
+                    
+                    <p><strong>Monitoramento e Auditoria:</strong></p>
+                    <ul>
+                        <li><strong>Azure Monitor:</strong> Monitoramento 24/7 de performance e saúde</li>
+                        <li><strong>Application Insights:</strong> Telemetria e diagnóstico de aplicações</li>
+                        <li><strong>Log Analytics:</strong> Centralização e análise de logs</li>
+                        <li><strong>Audit Logs:</strong> Registro de todos os acessos e operações</li>
+                        <li><strong>Alertas:</strong> Notificações automáticas de eventos críticos</li>
+                    </ul>
+                    
+                    <p><strong>🏆 Certificações Microsoft Azure (mais de 100 certificações globais):</strong></p>
+                    <ul>
+                        <li><strong>ISO/IEC 27001</strong> - Gestão de Segurança da Informação</li>
+                        <li><strong>ISO/IEC 27017</strong> - Segurança em Cloud Computing</li>
+                        <li><strong>ISO/IEC 27018</strong> - Proteção de Dados Pessoais na Nuvem</li>
+                        <li><strong>SOC 1, SOC 2, SOC 3</strong> - Controles de Segurança e Confidencialidade</li>
+                        <li><strong>GDPR</strong> - Regulamento Europeu de Proteção de Dados</li>
+                        <li><strong>LGPD</strong> - Lei Geral de Proteção de Dados (Brasil)</li>
+                        <li><strong>HIPAA</strong> - Health Insurance Portability and Accountability Act</li>
+                        <li><strong>PCI DSS</strong> - Payment Card Industry Data Security Standard</li>
+                    </ul>
+                    
+                    <p><strong>📈 Escalabilidade e Performance:</strong></p>
+                    <ul>
+                        <li><strong>App Service:</strong> Scale-up (vertical) e Scale-out (horizontal) automáticos</li>
+                        <li><strong>SQL Database:</strong> Ajuste dinâmico de DTUs/vCores conforme demanda</li>
+                        <li><strong>Storage:</strong> Expansão automática de capacidade</li>
+                        <li><strong>CDN:</strong> Distribuição global para performance otimizada</li>
+                        <li><strong>Load Balancer:</strong> Distribuição inteligente de carga</li>
+                    </ul>
+                    
+                    <p><strong>🛡️ Responsabilidade Compartilhada:</strong></p>
+                    <ul>
+                        <li><strong>Microsoft garante:</strong> Infraestrutura física, rede, hipervisor, datacenter</li>
+                        <li><strong>SafetyTec garante:</strong> Aplicação, dados, acessos, configurações de segurança</li>
+                        <li><strong>Cliente controla:</strong> Senhas, permissões de usuários, dados inseridos</li>
+                    </ul>
+                    
+                    <p><strong>✅ Resumo das Garantias:</strong></p>
+                    <ul>
+                        <li>SLA 99,95% a 99,99% (aplicação, banco e storage)</li>
+                        <li>Backups automatizados contínuos com retenção de 35 dias</li>
+                        <li>Recuperação point-in-time em qualquer momento</li>
+                        <li>Redundância geográfica para alta disponibilidade</li>
+                        <li>Criptografia end-to-end (repouso + trânsito)</li>
+                        <li>Monitoramento proativo 24/7</li>
+                        <li>Conformidade com mais de 100 normas internacionais</li>
+                        <li>Infraestrutura auditável e certificada</li>
+                    </ul>
+                    
+                    <p><strong>🎯 Compromisso SafetyTec:</strong></p>
+                    <p>Ambiente estável, seguro e moderno, mantendo a <strong>confidencialidade, integridade e disponibilidade</strong> das suas informações com o mais alto padrão de qualidade da indústria.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quanto tempo leva a implantação?</summary>
+                <div class="answer">
+                    <p><strong>Processo de implantação:</strong></p>
+                    <ol>
+                        <li><strong>Fechamento:</strong> Envio de e-mail solicitando dados para contrato</li>
+                        <li><strong>Contrato:</strong> Enviado via e-mail para todas as partes darem de acordo e assinarem</li>
+                        <li><strong>Pagamento:</strong> Emissão do primeiro boleto (mensalidade + taxa de implantação)</li>
+                        <li><strong>Planilhas:</strong> Suporte envia 2 modelos (colaboradores e catálogo) para preenchimento</li>
+                        <li><strong>Carga de dados:</strong> Realizada pela equipe em até 48 horas úteis após recebimento</li>
+                        <li><strong>Ativação:</strong> Sistema liberado após confirmação do pagamento</li>
+                    </ol>
+                    <p><strong>⏱️ Tempo total:</strong> A implantação depende principalmente da agilidade da empresa em fornecer os dados. Após envio, <span class="highlight">sistema ativo em até 48h úteis</span>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funciona o suporte?</summary>
+                <div class="answer">
+                    <p><strong>Canais de atendimento:</strong></p>
+                    <ul>
+                        <li>📧 <strong>E-mail:</strong> <a href="mailto:suporte@buscaepi.com" style="color: #c0392b; text-decoration: none; font-weight: 600;">suporte@buscaepi.com</a> (tickets)</li>
+                        <li>📱 <strong>WhatsApp:</strong> (41) 93500-1356</li>
+                        <li>📚 <strong>Central de Ajuda:</strong> Base de conhecimento 24/7</li>
+                    </ul>
+                    <p><strong>SLA:</strong> Resposta em até 48 horas úteis</p>
+                    <p><strong>Na implantação:</strong></p>
+                    <ul>
+                        <li>Setup completo realizado por especialistas</li>
+                        <li>Suporte ilimitado via WhatsApp, chat e e-mail</li>
+                        <li>Base de conhecimento com tutoriais e FAQs</li>
+                        <li>Videoaulas imersivas para capacitação contínua</li>
+                        <li>Treinamento ao vivo durante todo o onboarding</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 5: BENEFÍCIOS E RESULTADOS -->
+    <div class="faq-section">
+        <div class="section-header">
+            <span class="section-icon">📈</span>
+            <h2 class="section-title">Benefícios e Resultados</h2>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quais os principais benefícios do BuscaEPI para minha empresa?</summary>
+                <div class="answer">
+                    <p><strong>💰 Controle Financeiro:</strong></p>
+                    <ul>
+                        <li>Redução de até 50% dos custos operacionais</li>
+                        <li>Identificação de desperdícios e mau uso</li>
+                        <li>Controle preciso de custo por colaborador/setor</li>
+                        <li>Eliminação de compras emergenciais</li>
+                    </ul>
+                    
+                    <p><strong>⚖️ Segurança Jurídica:</strong></p>
+                    <ul>
+                        <li>Documentação completa para auditorias</li>
+                        <li>Redução de passivo trabalhista</li>
+                        <li>Conformidade total com NR-6</li>
+                        <li>Provas válidas em processos</li>
+                    </ul>
+                    
+                    <p><strong>⚙️ Eficiência Operacional:</strong></p>
+                    <ul>
+                        <li>Processos automatizados</li>
+                        <li>Tempo de entrega reduzido em 80%</li>
+                        <li>Eliminação de papel e retrabalho</li>
+                        <li>Gestão centralizada e multiplataforma</li>
+                    </ul>
+                    
+                    <p><strong>📊 Inteligência de Dados:</strong></p>
+                    <ul>
+                        <li>Dashboards executivos em tempo real</li>
+                        <li>Histórico completo de consumo</li>
+                        <li>Planejamento orçamentário preciso</li>
+                        <li>Indicadores de performance</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como o sistema ajuda no controle de mau uso e perdas?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI permite <strong>acompanhamento preciso</strong> do consumo individual de EPIs.</p>
+                    
+                    <p><strong>O gestor consegue:</strong></p>
+                    <ul>
+                        <li>Identificar colaboradores com trocas antecipadas frequentes</li>
+                        <li>Mapear padrões de mau uso por setor ou função</li>
+                        <li>Detectar perdas e extravios recorrentes</li>
+                        <li>Comparar consumo entre colaboradores da mesma função</li>
+                    </ul>
+                    
+                    <p><strong>Ações possíveis:</strong></p>
+                    <ul>
+                        <li>Treinamentos direcionados</li>
+                        <li>Ações disciplinares com base documental</li>
+                        <li>Cobrança em casos de extravio por negligência</li>
+                    </ul>
+                    
+                    <p><strong>Base legal:</strong> A NR-6 estabelece obrigação do colaborador em zelar pelo EPI. O sistema fornece comprovação para advertências ou cobranças.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Quais relatórios e indicadores o sistema oferece?</summary>
+                <div class="answer">
+                    <p><strong>📊 Relatórios Operacionais:</strong></p>
+                    <ul>
+                        <li>Entregas por período, unidade ou colaborador</li>
+                        <li>Consumo por colaborador, função, setor ou centro de custo</li>
+                        <li>Movimentações de estoque (entrada/saída)</li>
+                        <li>Itens vencidos ou com CA expirado</li>
+                        <li>Pendências de assinatura e troca</li>
+                    </ul>
+                    
+                    <p><strong>💰 Relatórios Financeiros:</strong></p>
+                    <ul>
+                        <li>Custos detalhados por período</li>
+                        <li>Consumo por centro de custo</li>
+                        <li>Comparativo de custos dos últimos 12 meses</li>
+                        <li>Projeções de gastos futuros</li>
+                    </ul>
+                    
+                    <p><strong>📈 Dashboards Executivos:</strong></p>
+                    <ul>
+                        <li>Visão consolidada em tempo real</li>
+                        <li>Gráficos de consumo por unidade/setor</li>
+                        <li>Indicadores de performance</li>
+                        <li>Alertas de ações necessárias</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como o sistema garante conformidade com a NR-6?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI foi desenvolvido <span class="highlight">100% alinhado à NR-6</span>.</p>
+                    
+                    <p><strong>Requisitos atendidos:</strong></p>
+                    <ul>
+                        <li>✅ Registro formal de fornecimento ao trabalhador</li>
+                        <li>✅ Sistema eletrônico com biometria (expressamente permitido)</li>
+                        <li>✅ Possibilidade de extração de relatórios</li>
+                        <li>✅ Controle de CA e validade</li>
+                        <li>✅ Treinamento e orientação documentados</li>
+                        <li>✅ Registro de trocas e devoluções</li>
+                        <li>✅ Matriz de EPI por função/setor/GHE</li>
+                    </ul>
+                    
+                    <p><strong>Documentação para fiscalização:</strong></p>
+                    <ul>
+                        <li>Fichas eletrônicas individuais</li>
+                        <li>Termos de entrega com assinatura</li>
+                        <li>Histórico completo e auditável</li>
+                        <li>Relatórios customizados</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 6: CATÁLOGO E ESTOQUE -->
+    <div class="faq-section">
+        <div class="section-header">
+            <span class="section-icon">📦</span>
+            <h2 class="section-title">Catálogo e Gestão de Estoque</h2>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O que posso cadastrar no catálogo além de EPIs?</summary>
+                <div class="answer">
+                    <p>O BuscaEPI é uma <strong>plataforma completa</strong> de gestão que permite cadastrar:</p>
+                    <ul>
+                        <li><strong>EPIs:</strong> Todos os equipamentos de proteção individual</li>
+                        <li><strong>EPCs:</strong> Equipamentos de proteção coletiva</li>
+                        <li><strong>Uniformes:</strong> Calças, camisas, jalecos, etc.</li>
+                        <li><strong>Ferramentas:</strong> Manuais, elétricas e pneumáticas</li>
+                        <li><strong>MROs:</strong> Materiais de manutenção, reparo e operação</li>
+                        <li><strong>Outros:</strong> Qualquer item que precise controle de entrega</li>
+                    </ul>
+                    <p>Cada categoria tem controles específicos adequados à sua natureza.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funciona o controle por grade (tamanho, cor, modelo)?</summary>
+                <div class="answer">
+                    <p>O sistema possui <strong>gestão completa de grades</strong> para controlar variações de um mesmo produto.</p>
+                    
+                    <p><strong>Exemplo prático - Luva de vaqueta:</strong></p>
+                    <ul>
+                        <li>Produto base: Luva de vaqueta</li>
+                        <li>Grades: P, M, G, GG</li>
+                        <li>Estoque separado por tamanho</li>
+                        <li>Controle de entrada/saída individual</li>
+                    </ul>
+                    
+                    <p><strong>Exemplo - Uniforme:</strong></p>
+                    <ul>
+                        <li>Produto: Camisa polo</li>
+                        <li>Grade 1: Tamanhos (P, M, G, GG, XG)</li>
+                        <li>Grade 2: Cores (azul, branca, preta)</li>
+                        <li>Estoque por combinação (P-azul, M-azul, P-branca, etc.)</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como o sistema controla validade de CA e vida útil?</summary>
+                <div class="answer">
+                    <p><strong>Controle automático em 3 níveis:</strong></p>
+                    
+                    <p><strong>1. Validade do CA:</strong></p>
+                    <ul>
+                        <li>Sistema <span class="highlight">alerta visualmente</span> sobre itens com CA vencido</li>
+                        <li><strong>Importante:</strong> Conforme Nota Técnica 146/2015 do MTE, é proibido <strong>adquirir</strong> EPIs com CA vencido, mas se o EPI foi comprado com CA válido e você pode comprovar isso, é permitido continuar usando/entregando até o fim da vida útil do produto</li>
+                        <li>O sistema não bloqueia a entrega para permitir essa flexibilidade legal</li>
+                        <li>Relatório de CAs vencidos para controle e planejamento de compras</li>
+                    </ul>
+                    
+                    <p><strong>2. Vida útil do equipamento:</strong></p>
+                    <ul>
+                        <li>Cada produto tem previsão de troca configurável</li>
+                        <li>Sistema calcula data prevista de troca automaticamente</li>
+                        <li>Envia alertas ao colaborador (e-mail/SMS)</li>
+                        <li>Relatório de trocas pendentes</li>
+                    </ul>
+                    
+                    <p><strong>3. Validade do produto:</strong></p>
+                    <ul>
+                        <li>Para itens com data de validade (ex: cremes, filtros)</li>
+                        <li>Controle de lote e validade</li>
+                        <li>Alerta de itens vencidos em estoque</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funciona a matriz de EPIs?</summary>
+                <div class="answer">
+                    <p>A <strong>Matriz de EPIs</strong> é um dos recursos mais poderosos do sistema para agilizar entregas.</p>
+                    
+                    <p><strong>Como configurar:</strong></p>
+                    <ol>
+                        <li>Acesse o cadastro de Função, Setor ou GHE</li>
+                        <li>Vincule os EPIs obrigatórios para aquela categoria</li>
+                        <li>Configure quantidade e previsão de troca</li>
+                        <li>Salve a matriz</li>
+                    </ol>
+                    
+                    <p><strong>Como funciona na entrega:</strong></p>
+                    <ol>
+                        <li>Selecione o colaborador</li>
+                        <li>Sistema identifica automaticamente a função/setor/GHE</li>
+                        <li>EPIs da matriz aparecem pré-selecionados</li>
+                        <li>Você confirma ou ajusta conforme necessidade</li>
+                        <li>Realiza a entrega em segundos!</li>
+                    </ol>
+                    
+                    <p><strong>Vantagem:</strong> O que levava 10 minutos passa a levar menos de 1 minuto!</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como funciona o alerta de estoque mínimo?</summary>
+                <div class="answer">
+                    <p>Configure <strong>estoque mínimo por item</strong> para receber alertas automáticos.</p>
+                    
+                    <p><strong>Configuração:</strong></p>
+                    <ol>
+                        <li>No cadastro do produto, defina quantidade mínima (ex: 10 unidades)</li>
+                        <li>Configure e-mails que devem receber alertas</li>
+                        <li>Ative a notificação</li>
+                    </ol>
+                    
+                    <p><strong>Funcionamento:</strong></p>
+                    <ul>
+                        <li>Quando estoque atingir o mínimo, sistema envia alerta automático</li>
+                        <li>Dashboard mostra visualmente itens em nível crítico</li>
+                        <li>Relatório de compras sugeridas</li>
+                    </ul>
+                    
+                    <p><strong>Benefício:</strong> Evita falta de EPIs e compras emergenciais mais caras.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Como identifico itens com CA vencido ou próximo do vencimento?</summary>
+                <div class="answer">
+                    <p><strong>Múltiplas formas de identificação:</strong></p>
+                    
+                    <p><strong>1. No momento da entrega:</strong></p>
+                    <ul>
+                        <li>Sistema <span class="highlight">alerta visualmente</span> sobre itens com CA vencido</li>
+                        <li>A entrega não é bloqueada, pois conforme Nota Técnica 146/2015 do MTE, se o EPI foi adquirido com CA válido, pode ser usado até o fim da vida útil</li>
+                        <li>Exibe alerta visual em itens próximos do vencimento para planejamento de compras</li>
+                    </ul>
+                    
+                    <p><strong>2. No dashboard:</strong></p>
+                    <ul>
+                        <li>Card específico mostra total de CAs vencidos</li>
+                        <li>Alerta visual para ação imediata</li>
+                    </ul>
+                    
+                    <p><strong>3. Relatórios:</strong></p>
+                    <ul>
+                        <li>"Itens com CA vencido" - lista completa</li>
+                        <li>"CAs a vencer nos próximos X dias" - planejamento</li>
+                        <li>Exportável para Excel/PDF</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>O sistema permite entregar EPIs com CA vencido? Isso é legal?</summary>
+                <div class="answer">
+                    <p><strong>Sim, o sistema permite, e isso está de acordo com a legislação.</strong></p>
+                    
+                    <p><strong>Nota Técnica 146/2015 do MTE:</strong></p>
+                    <p>A legislação estabelece que é proibido <strong>adquirir/comprar</strong> EPIs com CA vencido. Porém, se o EPI foi adquirido quando o CA estava válido, ele pode continuar sendo usado e entregue aos colaboradores até o fim da vida útil do produto.</p>
+                    
+                    <p><strong>Como o BuscaEPI trata isso:</strong></p>
+                    <ul>
+                        <li><strong>Não bloqueia a entrega</strong> de itens com CA vencido</li>
+                        <li><strong>Alerta visualmente</strong> sobre o vencimento do CA</li>
+                        <li>Permite que você comprove que adquiriu o produto quando o CA estava válido</li>
+                        <li>Mantém o histórico de entradas no estoque para comprovação</li>
+                    </ul>
+                    
+                    <p><strong>Recomendação:</strong> Mantenha as notas fiscais de compra dos EPIs. Elas comprovam que o produto foi adquirido quando o CA estava válido, garantindo conformidade legal.</p>
+                    
+                    <p><strong>Importante:</strong> Sempre respeite a vida útil do produto! Mesmo que o CA esteja válido, se o EPI já passou da vida útil, ele deve ser substituído.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Existe estoque separado para itens higienizados?</summary>
+                <div class="answer">
+                    <p>Atualmente, não há um estoque paralelo automático para itens higienizados, mas você pode gerenciar da seguinte forma:</p>
+                    <p><strong>Solução prática:</strong></p>
+                    <ol>
+                        <li>Ao registrar devolução, marque <strong>"não voltar ao estoque"</strong></li>
+                        <li>Após higienização, registre nova entrega marcando como <strong>"empréstimo"</strong></li>
+                        <li>Selecione <strong>"não registrar movimentação em estoque"</strong></li>
+                    </ol>
+                    <p>Desta forma, você controla itens higienizados sem duplicar no estoque principal.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ESTATÍSTICAS DO FAQ -->
+<footer>
+    <p style="margin-top: 20px;">© 2026 BuscaEPI - Gestão Inteligente de Segurança do Trabalho.<br>
+    <small>Todos os direitos reservados.</small></p>
+</footer>
+
+<script>
+function searchFAQ() {
+    const input = document.getElementById('searchInput');
+    if (!input) return;
+    
+    const filter = input.value.toLowerCase().trim();
+    const sections = document.getElementsByClassName('faq-section');
+    let totalMatches = 0;
+    
+    for (let section of sections) {
+        const items = section.getElementsByClassName('faq-item');
+        let sectionHasMatch = false;
+        
+        for (let item of items) {
+            const details = item.querySelector('details');
+            if (!details) continue;
+            
+            const summary = details.querySelector('summary');
+            const answer = details.querySelector('.answer');
+            
+            if (!summary) continue;
+            
+            // Pegar texto do summary e da resposta
+            let text = summary.textContent || '';
+            if (answer) {
+                text += ' ' + answer.textContent;
+            }
+            
+            // Verificar se contém o termo buscado
+            if (filter === '' || text.toLowerCase().indexOf(filter) > -1) {
+                item.style.display = '';
+                
+                if (filter !== '') {
+                    sectionHasMatch = true;
+                    totalMatches++;
+                    
+                    // Destacar termo buscado no summary
+                    if (filter.length > 2) {
+                        try {
+                            const regex = new RegExp(`(${filter})`, 'gi');
+                            const originalText = summary.getAttribute('data-original') || summary.textContent;
+                            if (!summary.getAttribute('data-original')) {
+                                summary.setAttribute('data-original', summary.textContent);
+                            }
+                            summary.innerHTML = originalText.replace(regex, '<mark style="background-color: yellow; padding: 2px;">$1</mark>');
+                        } catch (e) {
+                            console.error('Erro ao destacar:', e);
+                        }
+                    }
+                } else {
+                    sectionHasMatch = true;
+                    // Restaurar texto original
+                    if (summary.getAttribute('data-original')) {
+                        summary.textContent = summary.getAttribute('data-original');
+                    }
+                }
+            } else {
+                item.style.display = 'none';
+            }
+        }
+        
+        // Mostrar/ocultar seção inteira
+        if (sectionHasMatch || filter === '') {
+            section.style.display = '';
+        } else {
+            section.style.display = 'none';
+        }
+    }
+    
+    // Exibir contador de resultados
+    const resultCounter = docume
